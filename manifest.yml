@@ -5,4 +5,8 @@ applications:
   buildpack: java_buildpack
   instances: 1
   path: build/libs/mytest.ui-1.0.0.jar
+  services:
+  - mySqlService
+  - redisService
+  - rabbitMqService
 
