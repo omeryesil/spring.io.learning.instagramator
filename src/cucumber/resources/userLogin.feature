@@ -1,8 +1,8 @@
 Feature: User Login
+
+  @Implemented
   Scenario: Users logs into the application
-    Given User browses the site
-    And User sees the login page
-    And User enters valid username and password
-    And User clicks on Login button
+    Given User browses the site and sees login page
+    And User enters valid credentials and clicks login button
     Then User sees the home page
 
