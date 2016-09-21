@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/instagramator.iml" filepath="$PROJECT_DIR$/.idea/modules/instagramator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/instagramator_cucumber.iml" filepath="$PROJECT_DIR$/.idea/modules/instagramator_cucumber.iml" group="instagramator" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/instagramator_main.iml" filepath="$PROJECT_DIR$/.idea/modules/instagramator_main.iml" group="instagramator" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/instagramator_test.iml" filepath="$PROJECT_DIR$/.idea/modules/instagramator_test.iml" group="instagramator" />
     </modules>

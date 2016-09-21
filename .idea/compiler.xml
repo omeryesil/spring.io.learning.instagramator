@@ -19,6 +19,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="instagramator_cucumber" target="1.8" />
       <module name="instagramator_main" target="1.8" />
       <module name="instagramator_test" target="1.8" />
     </bytecodeTargetLevel>
