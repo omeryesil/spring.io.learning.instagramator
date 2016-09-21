@@ -31,8 +31,8 @@ public class UserLoginTest {
         throw new PendingException();
     }
 
-    @Then("^User sess the home page$")
-    public void userSessTheHomePage() throws Throwable {
+    @Then("^User sees the home page$")
+    public void userSeesTheHomePage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }

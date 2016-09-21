@@ -4,21 +4,23 @@ version '1.0-SNAPSHOT'
 buildscript {
     repositories {
         jcenter()
+
     }
 
     dependencies {
         //version 1.4.0 won't work in cloud foundry ---
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE")
         classpath "com.github.samueltbrown:gradle-cucumber-plugin:0.9"
+        //classpath "io.franzbecker:gradle-lombok:1.7"
     }
 }
 
+
+apply plugin: "com.github.samueltbrown.cucumber"
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
-apply plugin: "com.github.samueltbrown.cucumber"
-apply plugin: "io.franzbecker.gradle-lombok"
 
 
 jar {
@@ -38,6 +40,8 @@ repositories {
 dependencies {
     compile ("org.springframework.boot:spring-boot-starter-web")
     compile ("org.springframework.boot:spring-boot-starter-thymeleaf")
+
+    //compile ("org.projectlombok:lombok:1.16.4")
 
     cucumberCompile 'info.cukes:cucumber-java:1.2.2'
 
@@ -62,8 +66,9 @@ cucumber {
    // }
 }
 
-
+/*
 lombok { // optional: values below are the defaults
     version = "1.16.4"
     sha256 = "3ca225ce3917eac8bf4b7d2186845df4e70dcdede356dca8537b6d78a535c91e"
 }
+*/

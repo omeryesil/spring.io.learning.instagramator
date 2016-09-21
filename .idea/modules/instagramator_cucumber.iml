@@ -6,7 +6,6 @@
     <content url="file://$MODULE_DIR$/../../src/cucumber">
       <sourceFolder url="file://$MODULE_DIR$/../../src/cucumber/Java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/cucumber/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/../../src/cucumber" type="java-test-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

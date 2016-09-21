@@ -4,5 +4,5 @@ Feature: User Login
     And User sees the login page
     And User enters valid username and password
     And User clicks on Login button
-    Then User sess the home page
+    Then User sees the home page
 
