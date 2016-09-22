@@ -1,5 +1,18 @@
-<h2 id="subTitle">Home</h2>
+<h2 id="subTitle">{{message}}</h2>
 
 <p>
-    <a href="/">Logout</a>
+   <label>Instagram Username:</label>
+    <input id="instagramUserId" ng-model="userId" name="instagramUserId"/>
+    <button id="btnReceiveMedia" ng-click="receiveInstagramMedia()">Receive Media List</button>
+
+    <p>
+        {{returnObj}}
+    </p>
+
+    <table class="table table-striped">
+        <tr>
+
+        </tr>
+
+    </table>
 </p>

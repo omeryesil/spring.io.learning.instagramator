@@ -1,4 +1,7 @@
+    var configProvider = new Object();
+    configProvider.instagramUserListServiceUrl = "https://instagram-microservice-production.apps.dev.gsdcf.manulife.com/instagram_user";
 
+    // -----------------------------------------------------------------------------
 	// create the module and name it scotchApp
 	var mainApp = angular.module('mainApp', ['ngRoute']);
 
@@ -27,6 +30,7 @@
 
 	// create the controller and inject Angular's $scope
 	mainApp.controller('loginController', function($scope, $location) {
+        $scope.subTitle = "Login";
 
         $scope.login = function() {
             if ($scope.email =="test" && $scope.password=="test") {
@@ -35,13 +39,72 @@
                 $scope.message="Email and password do not match!";
             }
         }
+
 	});
 
-	mainApp.controller('homeController', function($scope) {
-		$scope.message = 'Home page';
+	mainApp.controller('homeController', function($scope, $http) {
+		$scope.subTitle = "Home";
+
+		$scope.receiveInstagramMedia = function ( ) {
+		    var userId = $scope.userId;
+
+            $http({
+              method: 'GET',
+              url: "https://instagram-microservice-production.apps.dev.gsdcf.manulife.com/instagram_user"
+            }).then(function successCallback(response) {
+                    alert("SUCCESS");
+
+                    var my_json = JSON.stringify(response)
+                    //We can use {'name': 'Lenovo Thinkpad 41A429ff8'} as criteria too
+                    var filtered_json = find_in_object(JSON.parse(my_json), {instagramUsername: userId});
+
+                    alert(filtered_json);
+
+              }, function errorCallback(response) {
+                    var error = setobjToString (response);
+
+                    alert("ERROR: " + error);
+            });
+		}
+
+		function getUserMedia (userId, userList) {
+		    $.grep(userList, function (n, i) {
+		        return n.instagram_user.instagramUsername == "userId";
+		    });
+
+		}
+
+
 	});
 
 	mainApp.controller('aboutController', function($scope) {
-		$scope.message = 'About page.';
+		$scope.subTitle = 'About';
 	});
 
+
+function find_in_object(my_object, my_criteria){
+
+  return my_object.filter(function(obj) {
+    return Object.keys(my_criteria).every(function(c) {
+      return obj[c] == my_criteria[c];
+    });
+  });
+
+}
+
+
+function setobjToString(obj){
+        var me =this;
+        obj=obj[0];
+        var tabjson=[];
+        for (var p in obj) {
+            if (obj.hasOwnProperty(p)) {
+                if (obj[p] instanceof Array){
+                    tabjson.push('"'+p +'"'+ ':' + me.setobjToString(obj[p]));
+                }else{
+                    tabjson.push('"'+p +'"'+':"'+obj[p]+'"');
+                }
+            }
+        }  tabjson.push()
+        return '{'+tabjson.join(',')+'}';
+    }

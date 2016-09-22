@@ -22,9 +22,8 @@ apply plugin: 'spring-boot'
 
 
 jar {
-    baseName="mytest.ui"
-    version="1.0.0"
-
+    baseName = "instagramator.ui"
+    version = "1.0.0"
 }
 
 sourceCompatibility = 1.8
@@ -46,6 +45,9 @@ dependencies {
     compile "io.ddavison:conductor:2.3.0"
 
     compile "org.seleniumhq.selenium:selenium-java"
+
+    //Rest client
+    compile "org.asynchttpclient:async-http-client:2.1.0-alpha1"
 
     compile 'junit:junit:4.12'
 

@@ -39,21 +39,21 @@ formatter.match({
   "location": "UserLoginSteps.userBrowsesTheSite()"
 });
 formatter.result({
-  "duration": 5139785281,
+  "duration": 5638303995,
   "status": "passed"
 });
 formatter.match({
   "location": "UserLoginSteps.userEntersValidUsernameAndPassword()"
 });
 formatter.result({
-  "duration": 777520447,
+  "duration": 646404589,
   "status": "passed"
 });
 formatter.match({
   "location": "UserLoginSteps.userSeesTheHomePage()"
 });
 formatter.result({
-  "duration": 1627568073,
+  "duration": 1525395822,
   "status": "passed"
 });
 });

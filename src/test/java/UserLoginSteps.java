@@ -5,8 +5,6 @@ import cucumber.api.java.en.Then;
 
 import java.util.logging.Logger;
 
-
-//@Config(browser= Browser.CHROME, url="http://localhost:8282/")
 public class UserLoginSteps  extends BaseDriver {
     Logger logger = Logger.getLogger(UserLoginSteps.class.getName());
 
