@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="2" tests="2" time="0">
+<testcase classname="List Instagram user images" name="User searches an existing instagram user" time="0">
+<skipped><![CDATA[Given Logged in user enters Instagram user Id into a textbox and clicks on Submit button.undefined
+Then User sees pictures from Instagram......................................undefined
+And Human faces on the pictures are highlighted.............................undefined
+]]></skipped>
+</testcase>
+<testcase classname="User Login" name="Users logs into the application" time="0">
+<skipped><![CDATA[Given User browses the site and sees login page.............................undefined
+And User enters valid credentials and clicks login button...................undefined
+Then User sees the home page................................................undefined
+]]></skipped>
+</testcase>
+</testsuite>
