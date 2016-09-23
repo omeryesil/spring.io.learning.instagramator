@@ -1,4 +1,4 @@
-package com.awapi.instagramator.controllers;
+package com.awapi.instagramator.controller;
 
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
@@ -15,10 +15,11 @@ import org.springframework.web.client.RestTemplate;
 
 
 @RestController
+@RequestMapping("/api/v1")
 public class InstragramatorController {
 
-    @RequestMapping(value="/api/v1/userlist", method= RequestMethod.GET)
-    public String userList () throws KeyManagementException, NoSuchAlgorithmException {
+    @RequestMapping(value="/userlist", method= RequestMethod.GET)
+    public String userlist () throws KeyManagementException, NoSuchAlgorithmException {
 
         DisableSSLCertificateCheckUtil.disableChecks();
 

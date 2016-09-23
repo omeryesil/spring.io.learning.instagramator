@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="mainApp" xmlns:th="http://www.springframework.org/schema/mvc">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Instragramator</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+    <script type="text/javascript" src="/js/App.js" ></script>
+
+</head>
+<body ng-controller="loginController">
+    <div class="container" >
+        <div class="page-header">
+            <h1>Instagramator</h1>
+        </div>
+
+        <div id="main" style="min-height:300px;">
+            <div ng-view></div>
+        </div>
+
+        <footer class="text-center">
+            <p>(c) 2016 Instagramator</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

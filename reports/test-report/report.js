@@ -44,23 +44,21 @@ formatter.match({
   "location": "ListInstragramUserImagesSteps.userBrowsesTheHomePage()"
 });
 formatter.result({
-  "duration": 4650881224,
-  "status": "passed"
+  "duration": 17103628866,
+  "error_message": "java.lang.AssertionError: Could not find By.cssSelector: #subTitle after 5 seconds\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat io.ddavison.conductor.Locomotive.waitForElement(Locomotive.java:241)\r\n\tat io.ddavison.conductor.Locomotive.getText(Locomotive.java:338)\r\n\tat io.ddavison.conductor.Locomotive.validateText(Locomotive.java:589)\r\n\tat io.ddavison.conductor.Locomotive.validateText(Locomotive.java:585)\r\n\tat functionaltest.ListInstragramUserImagesSteps.userBrowsesTheHomePage(ListInstragramUserImagesSteps.java:28)\r\n\tat ✽.Given User browses the home page(listPictures.feature:4)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "ListInstragramUserImagesSteps.userEntersUsernameIntoTheTextBoxAndClicksOnSubmitButton()"
 });
 formatter.result({
-  "duration": 448996315,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "ListInstragramUserImagesSteps.mediaFilesBelongToTheUsernameGetListed()"
 });
 formatter.result({
-  "duration": 2157748,
-  "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat functionaltest.ListInstragramUserImagesSteps.mediaFilesBelongToTheUsernameGetListed(ListInstragramUserImagesSteps.java:40)\r\n\tat ✽.Then Media files belong to the username get listed(listPictures.feature:6)\r\n",
-  "status": "pending"
+  "status": "skipped"
 });
 formatter.match({
   "location": "ListInstragramUserImagesSteps.humanFacesOnTheImagesGetHighlighted()"
@@ -69,11 +67,11 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 1079782074,
+  "duration": 1704081008,
   "status": "passed"
 });
 formatter.after({
-  "duration": 3117586590,
+  "duration": 7321693573,
   "status": "passed"
 });
 formatter.uri("userLogin.feature");
@@ -117,29 +115,28 @@ formatter.match({
   "location": "UserLoginSteps.userBrowsesTheSite()"
 });
 formatter.result({
-  "duration": 2579965786,
-  "status": "passed"
+  "duration": 13072003351,
+  "error_message": "java.lang.AssertionError: Could not find By.cssSelector: #subTitle after 5 seconds\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat io.ddavison.conductor.Locomotive.waitForElement(Locomotive.java:241)\r\n\tat io.ddavison.conductor.Locomotive.getText(Locomotive.java:338)\r\n\tat io.ddavison.conductor.Locomotive.validateText(Locomotive.java:589)\r\n\tat io.ddavison.conductor.Locomotive.validateText(Locomotive.java:585)\r\n\tat functionaltest.UserLoginSteps.userBrowsesTheSite(UserLoginSteps.java:22)\r\n\tat ✽.Given User browses the site and sees login page(userLogin.feature:5)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "location": "UserLoginSteps.userEntersValidUsernameAndPassword()"
 });
 formatter.result({
-  "duration": 757465598,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "UserLoginSteps.userSeesTheHomePage()"
 });
 formatter.result({
-  "duration": 1132922365,
+  "status": "skipped"
+});
+formatter.after({
+  "duration": 7335415753,
   "status": "passed"
 });
 formatter.after({
-  "duration": 3156155924,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 79643,
+  "duration": 1194678737,
   "status": "passed"
 });
 });

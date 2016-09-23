@@ -4,13 +4,14 @@ version '1.0-SNAPSHOT'
 buildscript {
     repositories {
         mavenCentral()
-
+        maven { url 'http://repo.spring.io/plugins-release' }
     }
 
     dependencies {
         //version 1.4.0 won't work in cloud foundry ---
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
         classpath 'com.github.samueltbrown:gradle-cucumber-plugin:0.8'
+
     }
 }
 
@@ -38,6 +39,9 @@ dependencies {
     compile ("org.springframework.boot:spring-boot-starter-web")
     compile ("org.springframework.boot:spring-boot-starter-thymeleaf")
 
+    //to refresh application when you change code, and other features
+    compile("org.springframework.boot:spring-boot-devtools")
+
     compile 'info.cukes:cucumber-java:1.2.4'
     compile 'info.cukes:cucumber-junit:1.2.4'
 
@@ -50,6 +54,13 @@ dependencies {
     compile "org.asynchttpclient:async-http-client:2.1.0-alpha1"
 
     compile 'junit:junit:4.12'
-
 }
 
+bootRepackage {
+    mainClass = 'com.awapi.instagramator.application'
+    excludeDevtools = false
+}
+
+bootRun {
+    addResources = true
+}
