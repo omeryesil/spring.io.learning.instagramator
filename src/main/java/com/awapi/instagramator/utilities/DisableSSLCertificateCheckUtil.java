@@ -1,4 +1,4 @@
-package com.awapi.bootcamp.omer;
+package com.awapi.instagramator.utilities;
 
 
 import javax.net.ssl.*;

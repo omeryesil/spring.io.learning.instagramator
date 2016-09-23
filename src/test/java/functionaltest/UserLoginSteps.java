@@ -1,13 +1,19 @@
+package functionaltest;
+
+import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import io.ddavison.conductor.Browser;
+import io.ddavison.conductor.Config;
+import io.ddavison.conductor.Locomotive;
 
 
 import java.util.logging.Logger;
 
-public class UserLoginSteps  extends BaseDriver {
+@Config(browser = Browser.CHROME, url="http://localhost:8282")
+public class UserLoginSteps  extends Locomotive {
     Logger logger = Logger.getLogger(UserLoginSteps.class.getName());
-
 
     @Given("^User browses the site and sees login page$")
     public void userBrowsesTheSite() throws Throwable {
@@ -36,4 +42,10 @@ public class UserLoginSteps  extends BaseDriver {
         validateText("#subTitle", "Home");
         driver.quit();
     }
+
+    @After
+    public void closeBrowser() throws Exception {
+        driver.quit();
+    }
+
 }

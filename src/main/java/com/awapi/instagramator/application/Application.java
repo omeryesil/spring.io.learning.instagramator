@@ -1,10 +1,7 @@
-package com.awapi.bootcamp.omer;
+package com.awapi.instagramator.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by Omer on 9/15/2016.

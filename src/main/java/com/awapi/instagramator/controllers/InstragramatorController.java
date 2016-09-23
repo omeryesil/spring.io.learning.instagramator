@@ -1,18 +1,13 @@
-package com.awapi.bootcamp.omer;
+package com.awapi.instagramator.controllers;
 
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
-import java.util.concurrent.Future;
-import org.asynchttpclient.AsyncHttpClient;
-import org.asynchttpclient.AsyncHttpClientConfig;
-import org.asynchttpclient.DefaultAsyncHttpClient;
-import org.asynchttpclient.Response;
+
+import com.awapi.instagramator.utilities.DisableSSLCertificateCheckUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.concurrent.Future;
 
 /**
  * Created by yesiome on 9/22/2016.

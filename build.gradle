@@ -53,18 +53,3 @@ dependencies {
 
 }
 
-cucumber {
-    formats = ['pretty','json:build/cucumber.json','junit:build/cucumber.xml']
-    glueDirs = ['src/test/java']
-    featureDirs = ['src/test/resources']
-    // tags = ['@implemented', '@future']
-    monochrome = false
-    strict = false
-    dryRun = false
-//    ignoreFailures = false
-
-   // jvmOptions {
-   //     maxHeapSize = '512m'
-   //     environment 'ENV', 'staging'
-   // }
-}

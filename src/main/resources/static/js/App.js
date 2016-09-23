@@ -55,7 +55,7 @@
                     alert("SUCCESS");
 
                     var my_json = JSON.stringify(response)
-                    //We can use {'name': 'Lenovo Thinkpad 41A429ff8'} as criteria too
+                    //We can use {'name': 'Omer Yesil'} as criteria too
                     var filtered_json = find_in_object(JSON.parse(my_json), {instagramUsername: userId});
 
                     alert(filtered_json);

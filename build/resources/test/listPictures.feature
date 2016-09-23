@@ -1,9 +1,9 @@
+@Implemented
 Feature: List Instagram user images
-
-  @Future
   Scenario: User searches an existing instagram user
-    Given Logged in user enters Instagram user Id into a textbox and clicks on Submit button
-    Then User sees pictures from Instagram
-    And Human faces on the pictures are highlighted
+    Given User browses the home page
+    And User enters username into the text box and clicks on Submit button
+    Then Media files belong to the username get listed
+    And Human faces on the images get highlighted
 
 
