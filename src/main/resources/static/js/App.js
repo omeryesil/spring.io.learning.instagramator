@@ -1,6 +1,3 @@
-    var configProvider = new Object();
-    configProvider.instagramUserListServiceUrl = "https://instagram-microservice-production.apps.dev.gsdcf.manulife.com/instagram_user";
-
     // -----------------------------------------------------------------------------
 	// create the module and name it scotchApp
 	var mainApp = angular.module('mainApp', ['ngRoute']);
@@ -49,13 +46,26 @@
 		    var userId = $scope.userId;
 
             // Get all users -------------- / Pagination not added ---
-            $http({
-              method: 'GET',
-              url: "/api/v1/userlist"
+            $http({ method: 'GET', url: "/api/v1/userlist"
             }).then(function successCallback(response) {
-                    var instagramUsers = response.data._embedded.instagram_user;
-                    alert(instagramUsers.length);
-
+                    //find user
+                    var user = null;
+                    for (var i=0; i< response.data._embedded.instagram_user.length; i++)
+                    {
+                        var u = response.data._embedded.instagram_user[i];
+                        if (u.instagramUsername == userId)
+                        {
+                            user = u;
+                            break;
+                        }
+                    }
+                    if (user == null)
+                    {
+                        alert("User not found");
+                        return;
+                    }
+                    var mediaUrl = user._links.instagramMedia.href;
+                    alert(mediaUrl);
 
               }, function errorCallback(response) {
                     var error = setobjToString (response);
@@ -64,11 +74,10 @@
             });
 		}
 
-		function getUserMedia (userId, userList) {
-		    $.grep(userList, function (n, i) {
-		        return n.instagram_user.instagramUsername == "userId";
+		function getUser (userId, instagramUsers) {
+		    $.grep(instagramUsers, function (n, i) {
+		        return instagramUsers.instagramUsername == userId;
 		    });
-
 		}
 
 
@@ -78,13 +87,3 @@
 		$scope.subTitle = 'About';
 	});
 
-
-function find_in_object(my_object, my_criteria){
-
-  return my_object.filter(function(obj) {
-    return Object.keys(my_criteria).every(function(c) {
-      return obj[c] == my_criteria[c];
-    });
-  });
-
-}
