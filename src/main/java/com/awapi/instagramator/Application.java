@@ -14,7 +14,10 @@ import org.springframework.context.annotation.Configuration;
  * Created by Omer on 9/15/2016.
  */
 
-@SpringBootApplication (scanBasePackages="com.awapi.instagramator.controller")
+@SpringBootApplication (
+        scanBasePackages={"com.awapi.instagramator.controller",
+                            "com.awapi.instagramator.simulator"
+                        })
 //@Configuration
 //@ComponentScan(basePackages = "com.awapi.instagramator.controller")
 //@EnableAutoConfiguration

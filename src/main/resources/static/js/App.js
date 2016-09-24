@@ -48,17 +48,14 @@
 		$scope.receiveInstagramMedia = function ( ) {
 		    var userId = $scope.userId;
 
+            // Get all users -------------- / Pagination not added ---
             $http({
               method: 'GET',
-              url: "https://instagram-microservice-production.apps.dev.gsdcf.manulife.com/instagram_user"
+              url: "/api/v1/userlist"
             }).then(function successCallback(response) {
-                    alert("SUCCESS");
+                    var instagramUsers = response.data._embedded.instagram_user;
+                    alert(instagramUsers.length);
 
-                    var my_json = JSON.stringify(response)
-                    //We can use {'name': 'Omer Yesil'} as criteria too
-                    var filtered_json = find_in_object(JSON.parse(my_json), {instagramUsername: userId});
-
-                    alert(filtered_json);
 
               }, function errorCallback(response) {
                     var error = setobjToString (response);
@@ -91,20 +88,3 @@ function find_in_object(my_object, my_criteria){
   });
 
 }
-
-
-function setobjToString(obj){
-        var me =this;
-        obj=obj[0];
-        var tabjson=[];
-        for (var p in obj) {
-            if (obj.hasOwnProperty(p)) {
-                if (obj[p] instanceof Array){
-                    tabjson.push('"'+p +'"'+ ':' + me.setobjToString(obj[p]));
-                }else{
-                    tabjson.push('"'+p +'"'+':"'+obj[p]+'"');
-                }
-            }
-        }  tabjson.push()
-        return '{'+tabjson.join(',')+'}';
-    }

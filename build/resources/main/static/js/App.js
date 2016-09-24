@@ -50,15 +50,17 @@
 
             $http({
               method: 'GET',
-              url: "https://instagram-microservice-production.apps.dev.gsdcf.manulife.com/instagram_user"
+              url: "/api/v1/userlist"
             }).then(function successCallback(response) {
-                    alert("SUCCESS");
+                    var instagramUsers = response.data._embedded.instagram_user;
+                    alert(instagramUsers.length);
 
-                    var my_json = JSON.stringify(response)
-                    //We can use {'name': 'Omer Yesil'} as criteria too
-                    var filtered_json = find_in_object(JSON.parse(my_json), {instagramUsername: userId});
+                    //getObjProps(response.data._embedded.instagram_user);
 
-                    alert(filtered_json);
+                    ////We can use {'name': 'Omer Yesil'} as criteria too
+                    //var filtered_json = find_in_object(JSON.parse(my_json), {instagramUsername: userId});
+
+                    //alert(filtered_json);
 
               }, function errorCallback(response) {
                     var error = setobjToString (response);
@@ -108,3 +110,24 @@ function setobjToString(obj){
         }  tabjson.push()
         return '{'+tabjson.join(',')+'}';
     }
+
+
+function getObjProps (obj) {
+    for (var key in obj) {
+      alert(key);
+    }
+    /*
+    var shadowedKeys = [
+      "isPrototypeOf",
+      "hasOwnProperty",
+      "toLocaleString",
+      "toString",
+      "valueOf"
+    ];
+    for (var i=0, a=shadowedKeys, l=a.length; i<l; i++) {
+      if map.hasOwnProperty(a[i])) {
+        alert(a[i]);
+      }
+    }
+    */
+}

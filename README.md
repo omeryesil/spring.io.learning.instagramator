@@ -1,6 +1,5 @@
 # Whitewhale
 
-
 ##To Install / Download
 ###For Development Environment
 ####LiveReload extension for Firefox and Chrome: Provides refresh when you change resource/static/*.* files
